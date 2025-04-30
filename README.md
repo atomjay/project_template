@@ -118,24 +118,4 @@ pnpm install
 - `architecture/`: 架構文檔
 - `api/`: API 文檔
 
-## 品質保證
 
-- 使用 TypeScript/Python type hints 確保型別安全
-- 單元測試覆蓋率要求 > 80%
-- 遵循各語言的程式碼規範
-- 定期安全性掃描
-- 自動化 CI/CD 流程
-
-## 維護者
-
-[Atom Jay](https://github.com/atomjay)
-
-## 授權說明
-
-MIT License
-
-## 更新日誌
-
-| 版本 | 日期 | 說明 |
-|------|------|------|
-| 1.0.0 | 2024-03-20 | 初始版本：建立基礎專案模板 |
