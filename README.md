@@ -1,183 +1,141 @@
-# [專案名稱] Template System
+# Project Template System
 
-這是一個基於 Google 最佳實踐的專案模板系統，用於快速建立和管理新專案。
+這是一個通用的專案模板系統，基於 Google 開發最佳實踐設計，支援 Python、Rust 和 Next.js 等多種開發環境，用於快速建立和管理新專案。
+
+## 特色
+
+- 📁 完整的專案結構和文檔模板
+- 🔧 支援多種開發環境（Python、Rust、Next.js）
+- 📝 完整的文檔管理系統
+- 🚀 快速開發流程指南
+- 🔍 品質保證和測試框架
+- 🛡️ 安全性最佳實踐
 
 ## 目錄結構
 
 ```
 project_root/
-├── docs/
-│   ├── requirements/
+├── docs/                    # 文檔目錄
+│   ├── requirements/        # 需求文檔
 │   │   ├── project_requirements.md
-│   │   ├── user_stories/
-│   │   │   ├── README.md
-│   │   │   ├── pending/
-│   │   │   ├── in_progress/
-│   │   │   └── completed/
-│   │   └── backlog.md
-│   ├── design/
-│   │   └── technical_specs.md
-│   ├── architecture/
-│   │   └── system_architecture.md
-│   ├── api/
-│   │   └── api_documentation.md
-│   └── development.md
-├── src/
-├── tests/
-├── config/
-├── deployments/
-├── scripts/
-└── README.md
+│   │   ├── user_stories/   # 使用者故事
+│   │   └── backlog.md      # 待辦事項
+│   ├── design/             # 設計文檔
+│   ├── architecture/       # 架構文檔
+│   ├── api/               # API 文檔
+│   └── development.md     # 開發指南
+├── src/                   # 源代碼目錄
+├── tests/                # 測試目錄
+├── config/               # 配置文件
+├── deployments/          # 部署相關
+└── scripts/             # 工具腳本
 ```
 
 ## 快速開始
 
 1. **複製模板**
 ```bash
-git clone [repository_url]
-cd [project_name]
+git clone https://github.com/atomjay/projcet_template.git
+cd project_template
 ```
 
-2. **修改專案設定**
-- 更新專案基本資訊
-  - 修改 README.md 中的專案名稱和說明
-  - 設定版本控制資訊
-- 更新核心文檔
-  - `docs/requirements/project_requirements.md`
-  - `docs/architecture/system_architecture.md`
-  - `docs/api/api_documentation.md`
-  - `docs/design/technical_specs.md`
+2. **選擇開發環境**
 
-3. **初始化開發環境**
+根據你的專案需求，選擇對應的開發環境：
+
+### Python 專案
 ```bash
+# 方法 1: 使用 venv
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或
+.\venv\Scripts\activate  # Windows
+
 # 安裝依賴
 pip install -r requirements.txt
-
-# 設定開發環境
-./scripts/setup.sh
 ```
 
-## 核心文檔說明
+```bash
+# 方法 2: 使用 Conda
+# 創建新的 Conda 環境
+conda create -n project_env python=3.x
+conda activate project_env
 
-### 1. 專案需求文檔
-位置：`docs/requirements/project_requirements.md`
-- 專案概述
-- 功能需求
-- 非功能需求
-- 驗收標準
-- 時程規劃
+# 安裝依賴
+conda install --file requirements.txt
+# 或
+pip install -r requirements.txt
 
-### 2. 系統架構文檔
-位置：`docs/architecture/system_architecture.md`
-- 系統概述
-- 技術架構
-- 安全架構
-- 部署架構
-- 監控方案
+# 將環境導出（可選）
+conda env export > environment.yml
+```
 
-### 3. API 文檔
-位置：`docs/api/api_documentation.md`
-- API 概述
-- 端點說明
-- 安全機制
-- 錯誤處理
-- 使用示例
+### Rust 專案
+```bash
+# 確認 Cargo.toml 存在
+cargo build
+```
 
-### 4. 技術規格文檔
-位置：`docs/design/technical_specs.md`
-- 技術選型
-- 數據模型
-- 介面設計
-- 安全規範
-- 效能要求
+### Next.js 專案
+```bash
+# 安裝依賴
+npm install
+# 或
+yarn install
+# 或
+pnpm install
+```
 
 ## 開發工作流程
 
-1. **需求階段**
-   - 建立 User Story
-   - 更新 backlog
-   - 規劃技術方案
+1. **初始化專案**
+   - 修改 README.md
+   - 更新專案配置
+   - 選擇開發環境
 
-2. **開發階段**
-   - 建立功能分支
+2. **開發流程**
+   - 建立功能分支 (`git checkout -b feature/your-feature`)
    - 實作功能
-   - 撰寫測試
+   - 提交變更 (`git commit -m "feat: add new feature"`)
+   - 發起合併請求
 
-3. **審查階段**
-   - 程式碼審查
-   - 測試驗證
-   - 文件更新
+3. **提交規範**
+   使用 Conventional Commits 規範：
+   - `feat`: 新功能
+   - `fix`: 錯誤修復
+   - `docs`: 文檔更新
+   - `style`: 程式碼格式
+   - `refactor`: 重構
+   - `test`: 測試相關
+   - `chore`: 維護任務
 
-4. **部署階段**
-   - 合併至主分支
-   - 部署至測試環境
-   - 驗證功能
-   - 部署至正式環境
+## 文檔指南
 
-## 最佳實踐
+所有文檔都使用 Markdown 格式，位於 `docs/` 目錄下：
 
-### 1. 文件管理
-- 使用 Markdown 格式
-- 遵循文檔模板
-- 保持文件更新
-- 維護版本記錄
-
-### 2. 程式碼管理
-- 遵循程式碼規範
-- 完整的單元測試
-- 明確的 commit 訊息
-- 定期程式碼審查
-
-### 3. 版本控制
-- 語意化版本號
-- 分支管理策略
-- 變更記錄維護
-- 發布流程規範
+- `requirements/`: 需求文檔
+- `design/`: 設計文檔
+- `architecture/`: 架構文檔
+- `api/`: API 文檔
 
 ## 品質保證
 
-### 1. 文檔檢查
-- 完整性檢查
-- 一致性驗證
-- 更新及時性
-- 關聯性確認
-
-### 2. 程式碼檢查
-- 風格規範
-- 測試覆蓋
-- 效能指標
-- 安全掃描
-
-### 3. 流程檢查
-- 工作流程遵循
-- 時程管理
-- 風險控制
-- 品質監控
-
-## 維護指南
-
-1. **定期更新**
-   - 文檔版本
-   - 依賴套件
-   - 安全修補
-   - 效能優化
-
-2. **問題處理**
-   - 問題追蹤
-   - 修復流程
-   - 回歸測試
-   - 文檔更新
-
-## 授權說明
-
-[授權說明]
+- 使用 TypeScript/Python type hints 確保型別安全
+- 單元測試覆蓋率要求 > 80%
+- 遵循各語言的程式碼規範
+- 定期安全性掃描
+- 自動化 CI/CD 流程
 
 ## 維護者
 
-[維護者資訊]
+[Atom Jay](https://github.com/atomjay)
+
+## 授權說明
+
+MIT License
 
 ## 更新日誌
 
 | 版本 | 日期 | 說明 |
 |------|------|------|
-| 1.0.0 | YYYY-MM-DD | 初始版本 | 
+| 1.0.0 | 2024-03-20 | 初始版本：建立基礎專案模板 |
